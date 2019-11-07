@@ -27,7 +27,7 @@ export default class RegisterUser extends React.Component {
         if (user_address) {
           db.transaction(function(tx) {
             tx.executeSql(
-              'INSERT INTO table_user (user_name, user_contact, user_address) VALUES (?,?,?)',
+              'INSERT INTO Users (user_name, user_contact, user_address) VALUES (?,?,?)',
               [user_name, user_contact, user_address],
               (tx, results) => {
                 console.log('Results', results.rowsAffected);

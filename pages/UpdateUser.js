@@ -27,7 +27,7 @@ export default class UpdateUser extends React.Component {
     console.log(this.state.input_user_id);
     db.transaction(tx => {
       tx.executeSql(
-        'SELECT * FROM table_user where user_id = ?',
+        'SELECT * FROM Users where user_id = ?',
         [input_user_id],
         (tx, results) => {
           var len = results.rows.length;
@@ -66,7 +66,7 @@ export default class UpdateUser extends React.Component {
         if (user_address) {
           db.transaction(tx => {
             tx.executeSql(
-              'UPDATE table_user set user_name=?, user_contact=? , user_address=? where user_id=?',
+              'UPDATE Users set user_name=?, user_contact=? , user_address=? where user_id=?',
               [user_name, user_contact, user_address, input_user_id],
               (tx, results) => {
                 console.log('Results', results.rowsAffected);

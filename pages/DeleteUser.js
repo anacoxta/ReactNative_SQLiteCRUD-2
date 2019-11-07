@@ -17,7 +17,7 @@ export default class UpdateUser extends React.Component {
     const {input_user_id} = this.state;
     db.transaction(tx => {
       tx.executeSql(
-        'DELETE FROM  table_user where user_id=?',
+        'DELETE FROM  Users where user_id=?',
         [input_user_id],
         (tx, results) => {
           console.log('Results', results.rowsAffected);

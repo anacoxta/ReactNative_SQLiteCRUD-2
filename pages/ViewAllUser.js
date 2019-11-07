@@ -11,7 +11,7 @@ export default class ViewAllUser extends React.Component {
       FlatListItems: [],
     };
     db.transaction(tx => {
-      tx.executeSql('SELECT * FROM table_user', [], (tx, results) => {
+      tx.executeSql('SELECT * FROM Users', [], (tx, results) => {
         var temp = [];
         for (let i = 0; i < results.rows.length; ++i) {
           temp.push(results.rows.item(i));

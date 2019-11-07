@@ -19,7 +19,7 @@ export default class ViewUser extends React.Component {
     console.log(this.state.input_user_id);
     db.transaction(tx => {
       tx.executeSql(
-        'SELECT * FROM table_user where user_id = ?',
+        'SELECT * FROM Users where user_id = ?',
         [input_user_id],
         (tx, results) => {
           var len = results.rows.length;
