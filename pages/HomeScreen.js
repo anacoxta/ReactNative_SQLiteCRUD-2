@@ -35,7 +35,7 @@ export default class HomeScreen extends React.Component {
           backgroundColor: 'white',
           flexDirection: 'column',
         }}>
-        <Mytext text="SQLite Example" />
+        <Mytext text="SQLite Example (using a prepopulated db)" />
         <Mybutton
           title="Register"
           customClick={() => this.props.navigation.navigate('Register')}
